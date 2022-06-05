@@ -1,10 +1,10 @@
-#**Albert Tuykin**
+# **Albert Tuykin**
 
 Junior Data Scientist
 
 ---
 
-##Contacts
+## Contacts
 
 **Location:** Kazan, Russia
 
@@ -18,7 +18,7 @@ Junior Data Scientist
 
 ---
 
-##Briefly About Myself:
+## Briefly About Myself:
 
 *I have an extensive experience in the financial sector as an analyst, risk manager and trader. 
 Daily work with a lot of data, processing with Excel, VBA, Python. Operating experience with information systems Bloomberg, Cbonds, RuData etc.
@@ -27,7 +27,7 @@ My goal is to become a full stack data scientist.*
 
 ---
 
-##Skills and Proficiency:
+## Skills and Proficiency:
 
 * Excel, VBA, PowerQuery
 * Python, R, SQL
@@ -37,7 +37,7 @@ My goal is to become a full stack data scientist.*
 * VS Code
 
 
-##Code example:
+## Code example:
 ```
 # Load historical prices and volumes from MOEX for liquidity report
 
@@ -105,7 +105,7 @@ load_prices(securities, start, end)
 
 ---
 
-##Education:
+## Education:
 2021 - **Creating and Applying Big Data Technologies** - NTI Educational Competence Center, Kazan
 
 2009 - **Engineer in Aircraft and Helicopter Engineering** - 
@@ -114,7 +114,7 @@ Kazan National Research Technical University, Kazan
 2005 - **Finance and Credit, Banking** - 
 Kazan State Institute of Finance and Economics, Kazan
 
-##Additional education:
+## Additional education:
 
 * Coursera courses:
   - Foundations: Data, Data, Everywhere by Google
@@ -130,7 +130,7 @@ Kazan State Institute of Finance and Economics, Kazan
 * JavaScript Manual on learnjavascript.ru (*in progress*)
 * RS Schools Course «JavaScript/Front-end. Stage 0» (*in progress*)
 
-##Languages:
+## Languages:
 * English - Intermediate/Upper-intermediate
 * Russian - Native
 * German - Basic/Intermediate
