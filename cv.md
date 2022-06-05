@@ -2,7 +2,7 @@
 
 Junior Data Scientist
 
-![Photo](https://github.com/darkcorpd/darkcorpd.github.io/blob/main/avatar400.jpg)
+![Photo](https://raw.githubusercontent.com/darkcorpd/darkcorpd.github.io/main/avatar400.jpg)
 ---
 
 ## Contacts
