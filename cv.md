@@ -2,6 +2,7 @@
 
 Junior Data Scientist
 
+![Alt-avatar](https://downloader.disk.yandex.ru/preview/9d968f824e4410559608ac48294d087cec3acdbbfa9534b4187ba7e938ba10d0/629d0907/il4S7RyOGnYIROfGqaVMnErK1qZZMg2tFiEoAxswwuYcRdtiU453xKq8w3OylYVEabkUUrUoyLyzJbx46cthjw%3D%3D?uid=0&filename=avatar400.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=1366x667)
 ---
 
 ## Contacts
@@ -124,8 +125,8 @@ Kazan State Institute of Finance and Economics, Kazan
   - Inferential Statistics by Duke University
   - SQL for Data Science by University of California, Davis
   - Mathematics and Python for Data Science
-  - Basic Statistics on Stepik
 
+* Basic Statistics on Stepik
 * Basic SQL, Python, R, HTML, Statistics courses on Sololearn, DataCamp, w3schools, Stepik and other resources.
 * JavaScript Manual on learnjavascript.ru (*in progress*)
 * RS Schools Course «JavaScript/Front-end. Stage 0» (*in progress*)
