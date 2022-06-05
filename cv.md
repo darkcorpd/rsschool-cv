@@ -2,7 +2,7 @@
 
 Junior Data Scientist
 
-![Alt-avatar](https://downloader.disk.yandex.ru/preview/9d968f824e4410559608ac48294d087cec3acdbbfa9534b4187ba7e938ba10d0/629d0907/il4S7RyOGnYIROfGqaVMnErK1qZZMg2tFiEoAxswwuYcRdtiU453xKq8w3OylYVEabkUUrUoyLyzJbx46cthjw%3D%3D?uid=0&filename=avatar400.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=1366x667)
+![Photo](https://github.com/darkcorpd/darkcorpd.github.io/blob/main/avatar400.jpg)
 ---
 
 ## Contacts
