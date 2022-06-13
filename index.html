@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cv</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class = "header">
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About Myself</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#code" class="nav-link">Code</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="#languages" class="nav-link">Languages</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-container">
+        <div class="container">
+            <section class="section" id="title">
+                <h1 class="section-title">Albert Tuykin</h1>
+                <p>Junior Data Scientist</p>
+                <img src="./assets/img/avatar400.jpg" alt="avatar">
+            </section>
+            <section class="section" id="contacts">
+                <h2 class="section-title">Contacts</h2>
+                <ul class="section-list">
+                    <li class="section-item contacts-item">
+                        Location: Kazan, Russia
+                    </li>
+                    <li class="section-item contacts-item">
+                        Email: <a href="mailto:darkcorpd@gmail.com" title="Email">darkcorpd@gmail.com</a>
+                    </li>
+                    <li class="section-item contacts-item">
+                        Github: <a href="https://github.com/darkcorpd" title="Github">darkcorpd</a>
+                    </li>
+                    <li class="section-item contacts-item">
+                        Telegram: <a href="https://t.me/darkcorp" title="Telegram">@darkcorp</a>
+                    </li>
+                    <li class="section-item contacts-item">
+                        Phone: <a href="tel:+79172202320" title="Phone">+79172202320</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="section" id="about">
+                <h2 class="section-title">Briefly About Myself:</h2>
+                    <p class="section-item">I have an extensive experience in the financial sector as an <span>analyst, risk manager and trader</span>.
+                        Daily work with a lot of data, processing with <span>Excel, VBA, Python</span>.
+                        Operating experience with information systems <span>Bloomberg, Cbonds, RuData</span> etc.
+                        Used to provide maintenance of financial companies in different jurisdictions (<span>Russia, Cyprus, Switzerland, Cayman Islands, USA, Estonia</span>).</p>    
+                    <p class="section-item">My goal is to become a full stack data scientist.</p>
+            </section>
+            <section class="section" id="skills">
+            <h2 class="section-title">Skills and Proficiency:</h2>
+                <ul class="section-list">
+                    <li class="section-item">
+                        Tabular Data Tools:<span> Excel, VBA, PowerQuery</span>
+                    </li>
+                    <li class="section-item">
+                        Data Science Skills:<span> Python, R, SQL</span>
+                    </li>
+                    <li class="section-item">
+                        Web-development:<span> HTML/CSS Basics, JavaScript Basics</span>
+                    </li>
+                    <li class="section-item">
+                        Version control:<span> Git, GitHub</span>
+                    </li>
+                    <li class="section-item">
+                        Other:<span> VS Code</span>
+                    </li>
+                </ul>
+            </section>
+            <section class="section" id="code">
+                <h2 class="section-title">Code example:</h2>
+                <pre class="pre">
+                    <code>
+# Load historical prices and volumes from MOEX for liquidity report
+
+import requests
+import apimoex
+import pandas as pd
+import urllib.request, json 
+
+def load_prices(securities, 
+                start, 
+                end):
+    result = []
+    for security in securities:
+            with urllib.request.urlopen(f'https://iss.moex.com/iss/securities.json?q={security}') as url:
+                data = json.loads(url.read().decode())
+                ticker = data['securities']['data'][0][1]
+    
+            with requests.Session() as session:
+                data = apimoex.find_securities(session, 
+                                               security, 
+                                               columns = None)
+                df = pd.DataFrame(data)
+                board = df.at[0, 'primary_boardid']
+                engine = 'futures' if board == 'RFUD' else 'stock'
+                market = 'forts' if board == 'RFUD' else 'shares'
+                start_date = start
+                end_date = end
+                data = apimoex.get_board_history(session, 
+                                                 security = ticker, 
+                                                 start = start_date, 
+                                                 end = end_date, 
+                                                 columns = ['SECID', 
+                                                            'TRADEDATE', 
+                                                            'HIGH', 
+                                                            'LOW', 
+                                                            'CLOSE', 
+                                                            'VOLUME'], 
+                                                 board = board, 
+                                                 market = market, 
+                                                 engine = engine)
+                result.extend(data[-10:])
+  
+    df = pd.DataFrame(result)
+    df.set_index('SECID', inplace=True)
+    # To save to .csv uncomment
+    # df.to_csv(f'{security}_{start_date}-{end_date}.txt',sep='\t', index=False)
+    # To print as a plain text uncomment
+    # print(df.to_string())
+    return df
+
+
+# ============================================================================== #
+# Set initial data:
+securities  = ['CHMF', 
+               'TATNP', 
+               'PHOR', 
+               'BRM2', 
+               'RU0007661625']
+start       = '2022-04-01'  #YYYY-MM-DD
+end         = '2022-04-30'  #YYYY-MM-DD
+
+load_prices(securities, start, end)
+                    </code>
+                </pre>
+            </section>
+            <section class="section" id="education">
+                <h2 class="section-title">Education:</h2>
+                <ol class="section-list" reversed>
+                    <li class="section-item" value="2021">
+                        <span> Creating and Applying Big Data Technologies</span> - NTI Educational Competence Center, Innopolis, Kazan
+                    </li>     
+                    <li class="section-item" value="2009">
+                        <span> Engineer in Aircraft and Helicopter Engineering</span> - Kazan National Research Technical University, Kazan
+                    </li>
+                    <li class="section-item" value="2005">
+                        <span> Finance and Credit, Banking</span> - Kazan State Institute of Finance and Economics, Kazan
+                    </li>
+                </ol>
+            </section>
+            <section class="section" id="education-2">
+                <h2 class="section-title">Additional education:</h2>
+            <ul class="section-list">
+                <li class="section-item">
+                    Coursera courses:
+                    <ul class="section-list-2">
+                        <li class="section-item-2">
+                            <span>Foundations: Data, Data, Everywhere</span> by Google 
+                        </li>
+                        <li class="section-item-2">
+                            <span>Ask Questions to Make Data-Driven Decisions</span> by Google 
+                        </li>
+                        <li class="section-item-2">
+                            <span>Data Analysis with Python</span> by IBM
+                        </li>
+                        <li class="section-item-2">
+                            <span>Databases and SQL for Data Science with Python</span> by IBM 
+                        </li>
+                        <li class="section-item-2">
+                            <span>Inferential Statistics</span> by Duke University 
+                        </li>
+                        <li class="section-item-2">
+                            <span>SQL for Data Science</span> by University of California, Davis 
+                        </li>
+                        <li class="section-item-2">
+                            <span>Mathematics and Python for Data Science</span> by Yandex
+                        </li>
+                    </ul>
+                </li>     
+                <li class="section-item">
+                    <span>Basic Statistics</span> on Stepik
+                </li>
+                <li class="section-item">
+                    <span>Basic SQL, Python, R, HTML, Statistics</span> courses on Sololearn, DataCamp, w3schools, Stepik and other resources.
+                </li>
+                <li class="section-item">
+                    <span>JavaScript Manual</span> on learnjavascript.ru <em>(in progress)</em>
+                </li>
+                <li class="section-item">
+                    RS Schools Course <span>«JavaScript/Front-end. Stage 0»</span> <em>(in progress)</em>
+                </li>
+            </ul>
+            </section>
+            <section class="section" id="languages">
+                <h2 class="section-title">Languages:</h2>
+                    <p class="section-item">English - <span>Intermediate/Upper-intermediate</span></p>
+                    <p class="section-item">Russian - <span>Native</span></p>
+                    <p class="section-item">German - <span>Basic/Intermediate</span></p>
+                    <p class="section-item">Turkish - <span>Basic/Intermediate</span></p>
+            </section>
+            <div class="back-to-top">
+                <a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">Back to top</a>
+            </div>
+            
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div>© 2022 <a href="https://github.com/darkcorpd" class="github nav-link">darkcorpd</a></div>
+                <a href="https://rs.school/js/" class="rss"></a>
+        </div>
+    </footer>
+</body>
+</html>

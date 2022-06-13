@@ -1,0 +1,180 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    border: 1px solid #343945;
+    background-color: #343945;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0; padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #343945;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-link {
+    padding: 0 20px;
+    line-height: 50px;
+    transition: .3s;
+    color: #829985;
+    text-decoration: none;  
+    transition: color 0.5s;
+}
+
+.nav-link:hover {
+  color: #65f114;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.section {
+    width: 60%;
+    width: calc(50% - 20px);
+    padding: 10px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid #343945;
+}
+
+
+@media (max-width: 768px) {
+    .section {
+      width: 100%;
+    }
+  }
+
+.section-title {
+    font-size: 20px;
+    font-weight: 400;
+    /*text-transform: uppercase;*/
+    letter-spacing: 3px;
+    color: #829985;
+}
+
+.section-item {
+    position: relative;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    padding-left: 30px;
+}
+
+.section-item-2 {
+    position: relative;
+    margin: 0;
+    margin-bottom: 3px;
+    padding: 0;
+    padding-left: 30px;
+    font-size: 0.8em;
+}
+
+
+.section-item span {
+    color: #829985;
+}
+
+.link {
+    text-decoration: none;
+    color: #829985;
+    transition: color 0.5s;
+}
+  
+.link:hover {
+    color: #5d7260;
+}
+
+.rss {
+    width: 121px;
+    height: 45px;
+    background-image: url(./assets/svg/rss.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+code {
+    font-family: monospace;
+    font-size: small;
+}
+
+.pre {
+    padding: 0;
+    margin: 0;
+}
+
+.footer {
+    background-color: #343945;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.github {
+    color: #fff;
+    text-decoration: none;
+    line-height: 45px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0 12px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+}
+
+ul li::marker {
+    color: #65f114;
+    font-size: 1.5em;
+}
+
+ ol li::marker {
+    color: #65f114;
+    font-size: 1em;
+}
+
+.back-to-top {
+    text-align: center
+}
